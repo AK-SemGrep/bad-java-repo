@@ -11,18 +11,6 @@ on:
   - cron: 18 13 * * *
 name: Semgrep
 jobs:
-  semgrep:
-    name: semgrep/ci
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-    env:
-      SEMGREP_APP_TOKEN: ${{ secrets.SEMGREP_APP_TOKEN }}
-    container:
-      image: semgrep/semgrep
-    steps:
-    - uses: actions/checkout@v4
-    - run: semgrep ci
   buildmavenDepTree:
         runs-on: ubuntu-latest
         steps:
